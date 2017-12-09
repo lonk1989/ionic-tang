@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我的
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background: #eee;">
+  <ion-list>
+    <button ion-item (click)="startMeSettingsPage()">
+      <ion-avatar item-start>
+        <img src="assets/imgs/avatar-3.png">
+      </ion-avatar>
+      <h2>林更新</h2>
+      <p>32岁 ♂</p>
+    </button>
+  </ion-list>
+  <ion-grid class="me-menu" text-center>
+    <ion-row>
+      <ion-col col-3 (click)="startChatListPage()">
+        <img src="assets/imgs/icon-9.png" />
+        <p>问诊单</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPlanPage()">
+        <img src="assets/imgs/icon-10.png" />
+        <p>方案</p>
+      </ion-col>
+      <ion-col col-3 (click)="startCollectPage()">
+        <img src="assets/imgs/icon-11.png" />
+        <p>收藏</p>
+      </ion-col>
+      <ion-col col-3 (click)="startOrderListPage()">
+        <img src="assets/imgs/icon-12.png" />
+        <p>订单</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="space"></div>
+  <ion-list class="no-border">
+    <button ion-item (click)="startPlanPage()">
+      <ion-icon name="logo-instagram" item-start></ion-icon>
+      识方问药
+    </button>
+    <button ion-item (click)="startBuyListPage()">
+      <ion-icon name="paper" item-start></ion-icon>
+      消费记录
+    </button>
+  </ion-list>
+  <ion-list class="no-border">
+    <button ion-item (click)="startSettingsPage()">
+      <ion-icon name="settings" item-start></ion-icon>
+      设置
+    </button>
+  </ion-list>
+</ion-content>

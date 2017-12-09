@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>购买调理服务</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background: #eee;">
+  <ion-list class="no-border">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/avatar-1.png">
+      </ion-avatar>
+      <h2>王医师  <small class="red">图文问诊服务</small></h2>
+      <h2 class="red">￥ 300/次</h2>
+    </ion-item>
+    <ion-item class="buy-menu">
+      <ion-row>
+        <ion-col col-4>
+          <img src="assets/imgs/icon-1.png" />
+          <p>图文</p>
+          <p>对话交流</p>
+        </ion-col>
+        <ion-col col-4>
+          <img src="assets/imgs/icon-2.png" />
+          <p>严谨</p>
+          <p>辩证开方</p>
+        </ion-col>
+        <ion-col col-4>
+          <img src="assets/imgs/icon-3.png" />
+          <p>制定</p>
+          <p>调理建议</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <ion-list radio-group class="no-border">
+    <ion-item>
+      <ion-label>微信支付</ion-label>
+      <ion-radio checked="true" value="weixin"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>支付宝支付</ion-label>
+      <ion-radio value="alipay"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list class="no-border">
+    <ion-item>
+      <br />
+      <h2 text-center> · 温馨提示 · </h2>
+      <br />
+      <p text-wrap>· 医生将在24小时内回复您，逾期未回复您可选择继续等待或申请退款。</p>
+      <p text-wrap>· 医生将与您通过图片、文字进行交流。</p>
+      <p text-wrap>· 医生将依据患者实际情况辩证开方、给出调理建议。</p>
+      <p text-wrap>· 购买成功后请如实填写问诊单并发送给医生，医生将按照接到问诊单先后顺序回复。</p>
+      <p text-wrap>· 问诊过程中请避免向医生咨询非患者本人的问题，否则医生有权提前结束咨询。</p>
+      <p text-wrap>· 本服务有效期：72小时有效。</p>
+      <p text-wrap>· 购买即同意《<span class="red">服务协议</span>》</p>
+      <br />
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2 (click)="tel()">
+          <p>客服</p>
+        </ion-col>
+        <ion-col col-7>
+          <p class="red">实付300元</p>
+        </ion-col>
+        <ion-col col-3>
+          <p class="red-bg" (click)="startPayPage()">去支付</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

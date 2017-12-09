@@ -1,0 +1,34 @@
+page-collect {
+  .collect-radio {
+    display: flex;
+    .item {
+      flex: 1;
+      min-height: 28px;
+      .input-wrapper {
+        text-align: center;
+      }
+      .radio {
+        opacity: 0;
+        margin: 0;
+      }
+    }
+    .item-block:last-child {
+      border-bottom: 2px solid #fff!important;
+    }
+    .item-radio {
+      border-bottom: 2px solid #fff!important;
+    }
+    .item-radio-checked {
+      border-bottom: 2px solid #488aff!important;
+    }
+    .item-block:last-child.item-radio-checked {
+      border-bottom: 2px solid #488aff!important;
+    }
+    .item-inner {
+      border-bottom: none!important;
+    }
+  }
+  .no-border .item-inner {
+    border-bottom: none!important;
+  }
+}

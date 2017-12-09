@@ -1,23 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { DiseaseDetailPage } from '../disease-detail/disease-detail';
 import { DoctorPage } from '../doctor/doctor';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-doctor-list',
+  templateUrl: 'doctor-list.html'
 })
-export class HomePage {
+export class DoctorListPage {
 
   constructor(public navCtrl: NavController) {
 
   }
 
-  startPage () {
-    this.navCtrl.push(DiseaseDetailPage);
-  }
-
   startDoctorPage () {
     this.navCtrl.push(DoctorPage);
   }
+
 }

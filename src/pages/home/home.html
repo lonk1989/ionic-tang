@@ -1,17 +1,107 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>医馆</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-slides pager loop autoplay="3000">
+    <ion-slide>
+      <img src="assets/imgs/slider-1.jpg" class="slide-image"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slider-2.jpg" class="slide-image"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slider-3.jpg" class="slide-image"/>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid class="home-menu">
+    <ion-row>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-1.png" />
+        <p>咳嗽感冒</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-2.png" />
+        <p>失眠头疼</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-3.png" />
+        <p>脱发白发</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-4.png" />
+        <p>眼部不适</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-5.png" />
+        <p>高血压</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-6.png" />
+        <p>糖尿病</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-7.png" />
+        <p>高血脂</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()">
+        <img src="assets/imgs/icon-8.png" />
+        <p>痛风</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="space"></div>
+  <ion-list class="home-doctor">
+    <button ion-item>更多医生</button>
+    <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/avatar-1.png">
+      </ion-thumbnail>
+      <h2>王医师 <small>主任医师</small></h2>
+      <p><small>仁济医院（三甲）</small></p>
+      <p><em>1800</em> 人付款，<em>190</em> 条评价</p>
+      <p text-wrap>脾胃不足，百病之始</p>
+    </button>
+    <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/avatar-2.png">
+      </ion-thumbnail>
+      <h2>李医师 <small>主任医师</small></h2>
+      <p><small>仁济医院（三甲）</small></p>
+      <p><em>1800</em> 人付款，<em>190</em> 条评价</p>
+      <p text-wrap>脾胃不足，百病之始</p>
+    </button>
+    <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/avatar-1.png">
+      </ion-thumbnail>
+      <h2>张医师 <small>主任医师</small></h2>
+      <p><small>仁济医院（三甲）</small></p>
+      <p><em>1800</em> 人付款，<em>190</em> 条评价</p>
+      <p text-wrap>脾胃不足，百病之始</p>
+    </button>
+    <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/avatar-2.png">
+      </ion-thumbnail>
+      <h2>莉医师 <small>主任医师</small></h2>
+      <p><small>仁济医院（三甲）</small></p>
+      <p><em>1800</em> 人付款，<em>190</em> 条评价</p>
+      <p text-wrap>脾胃不足，百病之始</p>
+    </button>
+    <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/avatar-1.png">
+      </ion-thumbnail>
+      <h2>黄医师 <small>主任医师</small></h2>
+      <p><small>仁济医院（三甲）</small></p>
+      <p><em>1800</em> 人付款，<em>190</em> 条评价</p>
+      <p text-wrap>脾胃不足，百病之始</p>
+    </button>
+  </ion-list>
 </ion-content>

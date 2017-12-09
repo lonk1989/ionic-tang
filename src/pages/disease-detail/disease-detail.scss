@@ -1,0 +1,53 @@
+page-disease-detail {
+  .list {
+    margin-bottom: 12px;
+  }
+
+  .adept {
+    min-height: 34px;
+  }
+  
+  .disease-detail {
+    h2 {
+      color: #f53d3d;
+      border-left: 4px solid #f53d3d;
+      padding-left: 12px;
+      font-size: 14px;
+    }
+  }
+  .doctor-list {
+    .label {
+      font-size: 12px;
+    }
+
+    .item img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+    
+    .item p {
+      font-size: 12px;
+     }
+
+    .item p em {
+      color: #f53d3d;
+      font-style: normal;
+      font-size: 14px;
+    }
+
+    .item p span {
+      display: inline-block;
+      background: #f6ab9a;
+      color: #fff;
+      border-radius: 8px;
+      padding: 2px 12px;
+      margin: 2px;
+      font-size: 12px;
+    }
+
+    .home-doctor-info .item-inner {
+      background-image: none!important;
+    }
+  }
+}

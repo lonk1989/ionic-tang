@@ -1,0 +1,96 @@
+page-doctor {
+  .list {
+    margin-bottom: 14px;
+  }
+
+  .doctor-avatar-bg {
+    padding-top: 160px;
+    h2 {
+      small {
+        color: #8e9093;
+      }
+    }
+    span {
+      display: inline-block;
+      background: #f6ab9a;
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin: 2px;
+      font-size: 12px;
+    }
+  }
+
+  .chat {
+    h2 {
+      color: #f53d3d;
+      span {
+        display: inline-block;
+        background: #fff;
+        color: #aaa;
+        border-radius: 4px;
+        border: 1px solid #eee;
+        padding: 2px 6px;
+        margin: 2px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .chat-begin p {
+    color: #aaa;
+  }
+
+  .no-border .item {
+    border: none!important;
+  }
+  .icon {
+    margin: 0!important;
+    color: #488aff;
+    font-size: 22px;
+    position: relative;
+    top: 3px;
+    left: -4px;
+  }
+
+  .item-block {
+    min-height: 40px;
+  }
+  .label {
+    font-size: 12px;
+    margin: 4px 8px 4px 0;
+  }
+
+  .adept {
+    span {
+      display: inline-block;
+      background: #fff;
+      color: #aaa;
+      border-radius: 4px;
+      border: 1px solid #eee;
+      padding: 2px 6px;
+      margin: 2px;
+      font-size: 12px;
+    }
+  }
+
+  .pull-right {
+    float: right;
+  }
+
+  .evaluate {
+    .red {
+      color: #ed5736;
+    }
+
+    em {
+      display: inline-block;
+      background: #d9e7f8;
+      color: #9eacbd;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin: 2px;
+      font-size: 12px;
+    }
+  }
+}

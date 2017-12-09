@@ -1,0 +1,50 @@
+page-buy {
+  .list {
+    margin-bottom: 14px;
+  }
+
+  .red {
+    color: #ed5736;
+  }
+
+  .buy-menu {
+    text-align: center;
+    .col img {
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+    }
+    .col p {
+      font-size: 12px;
+      margin: 0;
+      color: #999;
+    }
+  }
+
+  .footer {
+    padding: 0;
+    .grid, .row, .col {
+      padding: 0;
+    }
+
+    p {
+      margin:0;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+    }
+
+    .red-bg {
+      background: #ed5736;
+      color: #fff;
+    }
+  }
+  
+  .no-border .item {
+    border: none!important;
+  }
+
+  .item-block {
+    min-height: 40px;
+  }
+}

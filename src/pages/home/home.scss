@@ -1,3 +1,47 @@
 page-home {
+  .slides {
+    height: auto;
+  }
+  .swiper-container {
+    height: auto;
+  }
 
+  .space {
+    height: 12px;
+    background: #eee;
+  }
+
+  .home-menu {
+    text-align: center;
+    .col img {
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+    }
+    .col p {
+      font-size: 12px;
+      margin: 0;
+      color: #999;
+    }
+  }
+
+  .home-doctor {
+    .label {
+      font-size: 12px;
+    }
+
+    .item img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+
+    .item p em {
+      color: #f53d3d;
+    }
+
+    .home-doctor-info .item-inner {
+      background-image: none!important;
+    }
+  }
 }
