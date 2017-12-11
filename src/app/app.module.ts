@@ -1,4 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -17,6 +18,8 @@ import { DoctorListPage } from '../pages/doctor-list/doctor-list';
 import { DiseaseDetailPage } from '../pages/disease-detail/disease-detail';
 import { MeSettingsPage } from '../pages/me-settings/me-settings';
 import { SettingsPage } from '../pages/settings/settings';
+import { LoginPage } from '../pages/login/login';
+import { RegPage } from '../pages/reg/reg';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,10 +40,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DiseaseDetailPage,
     DoctorListPage,
     MeSettingsPage,
-    SettingsPage
+    SettingsPage,
+    LoginPage,
+    RegPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: 'true' ,       //隐藏全部子页面tabs
       backButtonText: '返回',
@@ -66,7 +72,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DiseaseDetailPage,
     DoctorListPage,
     MeSettingsPage,
-    SettingsPage
+    SettingsPage,
+    LoginPage,
+    RegPage
   ],
   providers: [
     StatusBar,
