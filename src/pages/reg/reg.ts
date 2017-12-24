@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 import { NavController } from 'ionic-angular'
 import { ToastController } from 'ionic-angular'
-import { Http, Response } from '@angular/http'
-import { AppConfig } from './../../app/app.config'
+// import { Http, Response } from '@angular/http'
+// import { AppConfig } from './../../app/app.config'
 import { CommonService } from '../../service/CommonService'
 
 @Component({
