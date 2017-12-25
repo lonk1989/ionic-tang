@@ -10,7 +10,7 @@ import { CommonService } from '../../service/CommonService'
   templateUrl: 'reg.html'
 })
 export class RegPage {
-  username:string = ''
+  phone:string = ''
   password:string = ''
   confirmPassword:string = ''
   constructor(public navCtrl: NavController, public toastCtrl: ToastController, public commonService: CommonService) {
@@ -18,13 +18,13 @@ export class RegPage {
   }
 
   submitReg () {
-    if (this.username.trim() === '') {
+    if (this.phone.trim() === '') {
       const toast = this.toastCtrl.create({
         message: '手机号不能为空',
         duration: 1200
       })
       toast.present();
-    } else if (!(/^1[34578]\d{9}$/.test(this.username))) {
+    } else if (!(/^1[34578]\d{9}$/.test(this.phone))) {
       const toast = this.toastCtrl.create({
         message: '手机号格式不正确',
         duration: 1200
@@ -49,11 +49,16 @@ export class RegPage {
       })
       toast.present();
     } else {
-      this.commonService.postRegPatient({
-        username: this.username,
+      this.commonService.patientRegister({
+        phone: this.phone,
         password: this.password
       }).subscribe(res => {
-        console.log(res)
+        const toast = this.toastCtrl.create({
+          message: '注册成功！',
+          duration: 1200
+        })
+        toast.present();
+        this.navCtrl.pop()
       })
     }
   }

@@ -24,7 +24,7 @@ export class FileService {
 
 
   /**
-   * 根据文件id获取文件信息
+   * 根据文件id删除文件信息
    * @param id
    * @returns {FileObj}
    */
@@ -90,7 +90,7 @@ export class FileService {
     if (!fileObjList || fileObjList.length == 0) {
       return Observable.of([]);
     }
-    return this.httpService.post(FILE_SERVE_URL + '/appUpload?directory=liveWork', fileObjList).map(result => {
+    return this.httpService.post(FILE_SERVE_URL + '/appUpload?directory=ionic2_tabs', fileObjList).map(result => {
       if (!result.success) {
         this.nativeService.alert(result.msg);
         return [];

@@ -59,6 +59,7 @@
     "cordova-plugin-zip": "^3.1.0",
     "cordova.plugins.diagnostic": "^3.8.0",
     "fundebug-javascript": "^0.3.3",
+    "ion2-calendar": "^2.1.4",
     "ionic-angular": "3.7.1",
     "ionic-plugin-keyboard": "^2.2.1",
     "ionicons": "3.0.0",

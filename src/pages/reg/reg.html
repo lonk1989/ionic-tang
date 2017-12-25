@@ -6,9 +6,9 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-list padding>
+  <ion-list>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="username" placeholder="手机号"></ion-input>
+      <ion-input type="text" [(ngModel)]="phone" placeholder="手机号"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input type="password" [(ngModel)]="password" placeholder="6位以上密码"></ion-input>
@@ -17,7 +17,7 @@
       <ion-input type="password" [(ngModel)]="confirmPassword" placeholder="再次确认密码"></ion-input>
     </ion-item>
   </ion-list>
-  <div padding>
+  <div padding-horizontal>
     <button ion-button color="primary" block (click)="submitReg()">提交</button>
   </div>
 </ion-content>

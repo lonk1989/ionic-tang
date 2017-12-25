@@ -5,6 +5,10 @@
 </ion-header>
 
 <ion-content>
+  <div class="yzt-header">
+    <img src="assets/imgs/header.png" />
+  </div>
+  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
   <ion-slides pager loop autoplay="3000">
     <ion-slide>
       <img src="assets/imgs/slider-1.jpg" class="slide-image"/>

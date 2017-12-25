@@ -13,6 +13,10 @@ export class HomePage {
 
   }
 
+  search () {
+    console.log('search')
+  }
+
   startPage () {
     this.navCtrl.push(DiseaseDetailPage);
   }

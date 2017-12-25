@@ -95,9 +95,9 @@ export class HttpService {
     this.nativeService.hideLoading();
     let json = res.json();
     if (url.indexOf(APP_SERVE_URL) != -1) {
-      if (json.code != 1) {
+      if (!json.success) {
         IS_DEBUG && console.log('%c 请求失败 %c', 'color:red', '', 'url', url, 'options', options, 'err', res);
-        this.nativeService.alert(json.msg || '请求失败,请稍后再试!');
+        this.nativeService.alert(json.message || '请求失败,请稍后再试!');
         return {success: false, data: json.data};
       } else {
         IS_DEBUG && console.log('%c 请求成功 %c', 'color:green', '', 'url', url, 'options', options, 'res', res);
@@ -169,10 +169,10 @@ export class HttpService {
   private addAuthorizationHeader(options: RequestOptionsArgs): RequestOptionsArgs {
     let token = this.globalData.token;
     if (options.headers) {
-      options.headers.append('Authorization', 'Bearer ' + token);
+      options.headers.append('Authorization', token);
     } else {
       options.headers = new Headers({
-        'Authorization': 'Bearer ' + token
+        'Authorization': token
       });
     }
     return options;

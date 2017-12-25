@@ -7,16 +7,13 @@ import {Injectable} from '@angular/core';
 export class GlobalData {
 
   private _userId: string;//用户id
-  private _username: string;//用户名
-  private _user;//用户信息
+  private _phone: string;//用户名
+  private _user;//用户详细信息
 
   private _token: string;//token
 
   //设置http请求是否显示loading,注意:设置为true,接下来的请求会不显示loading,请求执行完成会自动设置为false
   private _showLoading: boolean = true;
-
-  //app更新进度.默认为0,在app升级过程中会改变
-  private _updateProgress: number = -1;
 
   //是否启用文件缓存
   private _enabledFileCache: boolean = true;
@@ -29,12 +26,12 @@ export class GlobalData {
     this._userId = value;
   }
 
-  get username(): string {
-    return this._username;
+  get phone(): string {
+    return this._phone;
   }
 
-  set username(value: string) {
-    this._username = value;
+  set phone(value: string) {
+    this._phone = value;
   }
 
   get user() {
@@ -60,15 +57,6 @@ export class GlobalData {
   set showLoading(value: boolean) {
     this._showLoading = value;
   }
-
-  get updateProgress(): number {
-    return this._updateProgress;
-  }
-
-  set updateProgress(value: number) {
-    this._updateProgress = value;
-  }
-
   get enabledFileCache(): boolean {
     return this._enabledFileCache;
   }

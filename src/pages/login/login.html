@@ -6,17 +6,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-list padding>
-    <ion-item>
-      <ion-input type="text" placeholder="手机号"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="password" placeholder="6位以上密码"></ion-input>
-      <button ion-button item-end clear color="dark">忘记密码?</button>
-    </ion-item>
-  </ion-list>
-  <div padding>
-    <button ion-button color="primary" block>登录患者端</button>
-    <button ion-button clear color="primary" block (click)="startRegPage()">我要注册</button>
-  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" formControlName="phone" placeholder="手机号"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" formControlName="password" placeholder="6位以上密码"></ion-input>
+        <!-- <button ion-button item-end clear color="dark">忘记密码?</button> -->
+      </ion-item>
+    </ion-list>
+    <div padding-horizontal>
+      <button ion-button color="primary" block type="submit" [disabled]="!loginForm.valid||submitted">登录</button>
+      <button ion-button clear color="primary" block (click)="startRegPage()">我要注册</button>
+    </div>
+  </form>
 </ion-content>
