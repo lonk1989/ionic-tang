@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 
 @Component({
@@ -7,9 +7,15 @@ import { ToastController } from 'ionic-angular';
   templateUrl: 'buy.html'
 })
 export class BuyPage {
+  name: String
+  price: String
+  avatar: String
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
-
+  constructor(public navCtrl: NavController, public params: NavParams, public toastCtrl: ToastController) {
+    this.name = this.params.get('name');
+    this.price = this.params.get('price');
+    this.avatar = this.params.get('avatar');
+    console.log(this.params)
   }
 
   tel () {

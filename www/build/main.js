@@ -1306,9 +1306,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var BuyPage = (function () {
-    function BuyPage(navCtrl, toastCtrl) {
+    function BuyPage(navCtrl, params, toastCtrl) {
         this.navCtrl = navCtrl;
+        this.params = params;
         this.toastCtrl = toastCtrl;
+        this.name = this.params.get('name');
+        this.price = this.params.get('price');
+        this.avatar = this.params.get('avatar');
+        console.log(this.params);
     }
     BuyPage.prototype.tel = function () {
         var toast = this.toastCtrl.create({
@@ -1336,9 +1341,9 @@ var BuyPage = (function () {
 }());
 BuyPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-buy',template:/*ion-inline-start:"C:\Users\Lonk\projects\ionic-tang\src\pages\buy\buy.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>购买调理服务</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content style="background: #eee;">\n  <ion-list class="no-border">\n    <ion-item>\n      <ion-avatar item-start>\n        <img src="assets/imgs/avatar-1.png">\n      </ion-avatar>\n      <h2>王医师  <small class="red">图文问诊服务</small></h2>\n      <h2 class="red">￥ 300/次</h2>\n    </ion-item>\n    <ion-item class="buy-menu">\n      <ion-row>\n        <ion-col col-4>\n          <img src="assets/imgs/icon-1.png" />\n          <p>图文</p>\n          <p>对话交流</p>\n        </ion-col>\n        <ion-col col-4>\n          <img src="assets/imgs/icon-2.png" />\n          <p>严谨</p>\n          <p>辩证开方</p>\n        </ion-col>\n        <ion-col col-4>\n          <img src="assets/imgs/icon-3.png" />\n          <p>制定</p>\n          <p>调理建议</p>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n  <ion-list radio-group class="no-border">\n    <ion-item>\n      <ion-label>微信支付</ion-label>\n      <ion-radio checked="true" value="weixin"></ion-radio>\n    </ion-item>\n    <ion-item>\n      <ion-label>支付宝支付</ion-label>\n      <ion-radio value="alipay"></ion-radio>\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 温馨提示 · </h2>\n      <br />\n      <p text-wrap>· 医生将在24小时内回复您，逾期未回复您可选择继续等待或申请退款。</p>\n      <p text-wrap>· 医生将与您通过图片、文字进行交流。</p>\n      <p text-wrap>· 医生将依据患者实际情况辩证开方、给出调理建议。</p>\n      <p text-wrap>· 购买成功后请如实填写问诊单并发送给医生，医生将按照接到问诊单先后顺序回复。</p>\n      <p text-wrap>· 问诊过程中请避免向医生咨询非患者本人的问题，否则医生有权提前结束咨询。</p>\n      <p text-wrap>· 本服务有效期：72小时有效。</p>\n      <p text-wrap>· 购买即同意《<span class="red">服务协议</span>》</p>\n      <br />\n    </ion-item>\n  </ion-list>\n</ion-content>\n<ion-footer>\n  <ion-toolbar class="footer">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-2 (click)="tel()">\n          <p>客服</p>\n        </ion-col>\n        <ion-col col-7>\n          <p class="red">实付300元</p>\n        </ion-col>\n        <ion-col col-3>\n          <p class="red-bg" (click)="startPayPage()">去支付</p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Lonk\projects\ionic-tang\src\pages\buy\buy.html"*/
+        selector: 'page-buy',template:/*ion-inline-start:"C:\Users\Lonk\projects\ionic-tang\src\pages\buy\buy.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>购买调理服务</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content style="background: #eee;">\n  <ion-list class="no-border">\n    <ion-item>\n      <ion-avatar item-start>\n        <img [src]="avatar" />\n      </ion-avatar>\n      <h2>{{name}}  <small class="red">图文问诊服务</small></h2>\n      <h2 class="red">￥ {{price}}/次</h2>\n    </ion-item>\n    <ion-item class="buy-menu">\n      <ion-row>\n        <ion-col col-4>\n          <img src="assets/imgs/icon-1.png" />\n          <p>图文</p>\n          <p>对话交流</p>\n        </ion-col>\n        <ion-col col-4>\n          <img src="assets/imgs/icon-2.png" />\n          <p>严谨</p>\n          <p>辩证开方</p>\n        </ion-col>\n        <ion-col col-4>\n          <img src="assets/imgs/icon-3.png" />\n          <p>制定</p>\n          <p>调理建议</p>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n  <ion-list radio-group class="no-border">\n    <ion-item>\n      <ion-label>微信支付</ion-label>\n      <ion-radio checked="true" value="weixin"></ion-radio>\n    </ion-item>\n    <ion-item>\n      <ion-label>支付宝支付</ion-label>\n      <ion-radio value="alipay"></ion-radio>\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 温馨提示 · </h2>\n      <br />\n      <p text-wrap>· 医生将在24小时内回复您，逾期未回复您可选择继续等待或申请退款。</p>\n      <p text-wrap>· 医生将与您通过图片、文字进行交流。</p>\n      <p text-wrap>· 医生将依据患者实际情况辩证开方、给出调理建议。</p>\n      <p text-wrap>· 购买成功后请如实填写问诊单并发送给医生，医生将按照接到问诊单先后顺序回复。</p>\n      <p text-wrap>· 问诊过程中请避免向医生咨询非患者本人的问题，否则医生有权提前结束咨询。</p>\n      <p text-wrap>· 本服务有效期：72小时有效。</p>\n      <p text-wrap>· 购买即同意《<span class="red">服务协议</span>》</p>\n      <br />\n    </ion-item>\n  </ion-list>\n</ion-content>\n<ion-footer>\n  <ion-toolbar class="footer">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-2 (click)="tel()">\n          <p>客服</p>\n        </ion-col>\n        <ion-col col-7>\n          <p class="red">实付{{price}}元</p>\n        </ion-col>\n        <ion-col col-3>\n          <p class="red-bg" (click)="startPayPage()">去支付</p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Lonk\projects\ionic-tang\src\pages\buy\buy.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */]])
 ], BuyPage);
 
 //# sourceMappingURL=buy.js.map
@@ -2959,7 +2964,7 @@ var NativeService = (function () {
             this.toastCtrl.create({
                 message: message,
                 duration: duration,
-                position: 'middle',
+                position: 'bottom',
                 showCloseButton: false
             }).present();
         }
@@ -4182,7 +4187,7 @@ var HttpService = HttpService_1 = (function () {
         if (url.indexOf(__WEBPACK_IMPORTED_MODULE_6__Constants__["a" /* APP_SERVE_URL */]) != -1) {
             if (!json.success) {
                 __WEBPACK_IMPORTED_MODULE_6__Constants__["h" /* IS_DEBUG */] && console.log('%c 请求失败 %c', 'color:red', '', 'url', url, 'options', options, 'err', res);
-                this.nativeService.alert(json.message || '请求失败,请稍后再试!');
+                this.nativeService.showToast(json.message || '请求失败,请稍后再试!');
                 return { success: false, data: json.data };
             }
             else {
@@ -4201,10 +4206,10 @@ var HttpService = HttpService_1 = (function () {
         __WEBPACK_IMPORTED_MODULE_6__Constants__["h" /* IS_DEBUG */] && console.log('%c 请求失败 %c', 'color:red', '', 'url', url, 'options', options, 'err', err);
         this.nativeService.hideLoading();
         if (err instanceof __WEBPACK_IMPORTED_MODULE_2_rxjs__["TimeoutError"]) {
-            this.nativeService.alert('请求超时,请稍后再试!');
+            this.nativeService.showToast('请求超时,请稍后再试!');
         }
         else if (!this.nativeService.isConnecting()) {
-            this.nativeService.alert('请连接网络');
+            this.nativeService.showToast('请连接网络');
         }
         else {
             var status_1 = err.status;
@@ -4218,7 +4223,7 @@ var HttpService = HttpService_1 = (function () {
             else if (status_1 === 500) {
                 msg = '请求失败，服务器出错，请稍后再试';
             }
-            this.nativeService.alert(msg);
+            this.nativeService.showToast(msg);
             this.logger.httpLog(err, msg, {
                 url: url,
                 status: status_1
@@ -4314,9 +4319,11 @@ var DoctorPage = (function () {
         this.sanitizer = sanitizer;
         this.doctor = {
             name: '',
+            avatar: '',
             rank: '',
             hospital: '',
             price: '--',
+            consult_price: '--',
             about: '',
             intro: '',
             adeptArr: []
@@ -4336,8 +4343,8 @@ var DoctorPage = (function () {
     DoctorPage.prototype.assembleHTML = function (strHTML) {
         return this.sanitizer.bypassSecurityTrustHtml(strHTML);
     };
-    DoctorPage.prototype.startBuyPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__buy_buy__["a" /* BuyPage */]);
+    DoctorPage.prototype.startBuyPage = function (name, price, avatar) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__buy_buy__["a" /* BuyPage */], { name: name, price: price, avatar: avatar });
     };
     DoctorPage.prototype.startVisitPage = function () {
         var toast = this.toastCtrl.create({
@@ -4376,7 +4383,7 @@ var DoctorPage = (function () {
 }());
 DoctorPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-doctor',template:/*ion-inline-start:"C:\Users\Lonk\projects\ionic-tang\src\pages\doctor\doctor.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>医生信息</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content style="background: #eee;">\n  <ion-list class="no-border">\n    <!-- <ion-item class="doctor-avatar-bg" style="background:url(../assets/imgs/avatar-1.png) no-repeat;background-size: 100% auto"> -->\n    <ion-item class="doctor-avatar-bg">\n      <h2>{{doctor.name}} · <small>{{doctor.rank}}</small></h2>\n      <p>{{doctor.hospital}}</p>\n      <p><small>服务1832人 · 84%复诊率 · 190条评价</small></p>\n    </ion-item>\n    <ion-item class="chat">\n      <h2>{{doctor.price}}元/次 <span>图文 · 语音</span></h2>\n      <p>医生将在24小时内与您图文交流、辩证开方</p>\n      <button ion-button item-end (click)="startBuyPage()">图文问诊</button>\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item class="chat">\n      <h2>{{doctor.consult_price}}元/5次 <span>图文 · 语音</span></h2>\n      <p>医生将在24小时内回答您的诊后问题</p>\n      <button ion-button item-end (click)="startVisitPage()">诊后咨询</button>\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <button ion-item (click)="startOfflinePage()">\n      <ion-icon name="paper-plane" item-start></ion-icon>\n      约见线下面诊\n    </button>\n    <button ion-item (click)="startNoticePage()">\n      <ion-icon name="flag" item-start></ion-icon>\n      医生公告\n    </button>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item class="adept">\n      <br />\n      <h2 text-center>· 擅长调理 ·</h2>\n      <br />\n      <!-- <p text-wrap><span>皮肤科</span><span>痘痘痤疮</span><span>脱发</span><span>湿疹</span><span>面部色斑</span></p> -->\n      <p text-wrap><span *ngFor="let child of doctor.adeptArr">{{child}}</span></p>\n      <br />\n    </ion-item>\n  </ion-list>\n<!--   <ion-list class="no-border">\n    <ion-item>\n      <p>战“痘”专家——皮肤健康才会颜值爆表！</p>\n    </ion-item>\n  </ion-list> -->\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 关于我 · </h2>\n      <br />\n      <!-- <img src="../assets/imgs/icon-14.png" /> -->\n      <div text-wrap class="pmain_text" [innerHTML]="assembleHTML(doctor.about)"></div>\n      <!-- <p text-wrap>有人说最可悲的是“青春不在青春痘还在”，岁月悠悠，长在你脸上的已经不是青春的“痘”，而是成人痤疮。痘痘是穿越青春的痛</p> -->\n      <br />\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 我的简介 · </h2>\n      <br />\n      <div text-wrap class="pmain_text" [innerHTML]="assembleHTML(doctor.intro)"></div>\n      <br />\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 评价 · </h2>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <span class="pull-right">2017-09-20 18:03:32</span></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <em class="pull-right">2017-09-20 18:03:32</em></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <em class="pull-right">2017-09-20 18:03:32</em></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <em class="pull-right">2017-09-20 18:03:32</em></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Lonk\projects\ionic-tang\src\pages\doctor\doctor.html"*/
+        selector: 'page-doctor',template:/*ion-inline-start:"C:\Users\Lonk\projects\ionic-tang\src\pages\doctor\doctor.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>医生信息</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content style="background: #eee;">\n  <ion-list class="no-border">\n    <!-- <ion-item class="doctor-avatar-bg" style="background:url(../assets/imgs/avatar-1.png) no-repeat;background-size: 100% auto"> -->\n    <ion-item class="doctor-avatar-bg">\n      <h2>{{doctor.name}} · <small>{{doctor.rank}}</small></h2>\n      <p>{{doctor.hospital}}</p>\n      <p><small>服务1832人 · 84%复诊率 · 190条评价</small></p>\n    </ion-item>\n    <ion-item class="chat">\n      <h2>{{doctor.price}}元/次 <span>图文 · 语音</span></h2>\n      <p>医生将在24小时内与您图文交流、辩证开方</p>\n      <button ion-button item-end (click)="startBuyPage(doctor.name, doctor.price, doctor.avatar)">图文问诊</button>\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item class="chat">\n      <h2>{{doctor.consult_price}}元/5次 <span>图文 · 语音</span></h2>\n      <p>医生将在24小时内回答您的诊后问题</p>\n      <button ion-button item-end (click)="startVisitPage()">诊后咨询</button>\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <button ion-item (click)="startOfflinePage()">\n      <ion-icon name="paper-plane" item-start></ion-icon>\n      约见线下面诊\n    </button>\n    <button ion-item (click)="startNoticePage()">\n      <ion-icon name="flag" item-start></ion-icon>\n      医生公告\n    </button>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item class="adept">\n      <br />\n      <h2 text-center>· 擅长调理 ·</h2>\n      <br />\n      <!-- <p text-wrap><span>皮肤科</span><span>痘痘痤疮</span><span>脱发</span><span>湿疹</span><span>面部色斑</span></p> -->\n      <p text-wrap><span *ngFor="let child of doctor.adeptArr">{{child}}</span></p>\n      <br />\n    </ion-item>\n  </ion-list>\n<!--   <ion-list class="no-border">\n    <ion-item>\n      <p>战“痘”专家——皮肤健康才会颜值爆表！</p>\n    </ion-item>\n  </ion-list> -->\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 关于我 · </h2>\n      <br />\n      <!-- <img src="../assets/imgs/icon-14.png" /> -->\n      <div text-wrap class="pmain_text" [innerHTML]="assembleHTML(doctor.about)"></div>\n      <!-- <p text-wrap>有人说最可悲的是“青春不在青春痘还在”，岁月悠悠，长在你脸上的已经不是青春的“痘”，而是成人痤疮。痘痘是穿越青春的痛</p> -->\n      <br />\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 我的简介 · </h2>\n      <br />\n      <div text-wrap class="pmain_text" [innerHTML]="assembleHTML(doctor.intro)"></div>\n      <br />\n    </ion-item>\n  </ion-list>\n  <ion-list class="no-border">\n    <ion-item>\n      <br />\n      <h2 text-center> · 评价 · </h2>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <span class="pull-right">2017-09-20 18:03:32</span></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <em class="pull-right">2017-09-20 18:03:32</em></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <em class="pull-right">2017-09-20 18:03:32</em></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n    <ion-item class="evaluate">\n      <p><span class="red">^-^ 很满意</span> 15*******98 <em class="pull-right">2017-09-20 18:03:32</em></p>\n      <p text-wrap><em>响应速度很快</em><em>回答很专业</em><em>意见很有帮助</em><em>讲解很细致</em><em>回答很及时</em></p>\n      <p text-wrap>痘痘越来越好了，又开了两周的药，继续配合大夫，要把痘痘治好，先治痘痘再治黄褐斑</p>\n      <p>症状描述：<small>暂未填写</small></p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Lonk\projects\ionic-tang\src\pages\doctor\doctor.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__service_CommonService__["a" /* CommonService */], __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */]])
 ], DoctorPage);

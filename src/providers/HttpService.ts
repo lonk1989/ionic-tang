@@ -97,7 +97,7 @@ export class HttpService {
     if (url.indexOf(APP_SERVE_URL) != -1) {
       if (!json.success) {
         IS_DEBUG && console.log('%c 请求失败 %c', 'color:red', '', 'url', url, 'options', options, 'err', res);
-        this.nativeService.alert(json.message || '请求失败,请稍后再试!');
+        this.nativeService.showToast(json.message || '请求失败,请稍后再试!');
         return {success: false, data: json.data};
       } else {
         IS_DEBUG && console.log('%c 请求成功 %c', 'color:green', '', 'url', url, 'options', options, 'res', res);
@@ -116,9 +116,9 @@ export class HttpService {
     IS_DEBUG && console.log('%c 请求失败 %c', 'color:red', '', 'url', url, 'options', options, 'err', err);
     this.nativeService.hideLoading();
     if (err instanceof TimeoutError) {
-      this.nativeService.alert('请求超时,请稍后再试!');
+      this.nativeService.showToast('请求超时,请稍后再试!');
     } else if (!this.nativeService.isConnecting()) {
-      this.nativeService.alert('请连接网络');
+      this.nativeService.showToast('请连接网络');
     } else {
       let status = err.status;
       let msg = '请求发生异常';
@@ -129,7 +129,7 @@ export class HttpService {
       } else if (status === 500) {
         msg = '请求失败，服务器出错，请稍后再试';
       }
-      this.nativeService.alert(msg);
+      this.nativeService.showToast(msg);
       this.logger.httpLog(err, msg, {
         url: url,
         status: status

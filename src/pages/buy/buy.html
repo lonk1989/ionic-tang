@@ -7,10 +7,10 @@
   <ion-list class="no-border">
     <ion-item>
       <ion-avatar item-start>
-        <img src="assets/imgs/avatar-1.png">
+        <img [src]="avatar" />
       </ion-avatar>
-      <h2>王医师  <small class="red">图文问诊服务</small></h2>
-      <h2 class="red">￥ 300/次</h2>
+      <h2>{{name}}  <small class="red">图文问诊服务</small></h2>
+      <h2 class="red">￥ {{price}}/次</h2>
     </ion-item>
     <ion-item class="buy-menu">
       <ion-row>
@@ -66,7 +66,7 @@
           <p>客服</p>
         </ion-col>
         <ion-col col-7>
-          <p class="red">实付300元</p>
+          <p class="red">实付{{price}}元</p>
         </ion-col>
         <ion-col col-3>
           <p class="red-bg" (click)="startPayPage()">去支付</p>

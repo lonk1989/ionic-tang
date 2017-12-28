@@ -15,9 +15,11 @@ export class DoctorPage {
   constructor(public navCtrl: NavController, public params: NavParams, public toastCtrl: ToastController, public commonService: CommonService, private sanitizer: DomSanitizer) {
     this.doctor = {
       name: '',
+      avatar: '',
       rank: '',
       hospital: '',
       price: '--',
+      consult_price: '--',
       about: '',
       intro: '',
       adeptArr: []
@@ -39,8 +41,8 @@ export class DoctorPage {
     return this.sanitizer.bypassSecurityTrustHtml(strHTML);
   }
 
-  startBuyPage () {
-    this.navCtrl.push(BuyPage);
+  startBuyPage (name, price, avatar) {
+    this.navCtrl.push(BuyPage, {name: name, price: price, avatar: avatar});
   }
   
   startVisitPage() {

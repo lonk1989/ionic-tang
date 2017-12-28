@@ -14,7 +14,7 @@
     <ion-item class="chat">
       <h2>{{doctor.price}}元/次 <span>图文 · 语音</span></h2>
       <p>医生将在24小时内与您图文交流、辩证开方</p>
-      <button ion-button item-end (click)="startBuyPage()">图文问诊</button>
+      <button ion-button item-end (click)="startBuyPage(doctor.name, doctor.price, doctor.avatar)">图文问诊</button>
     </ion-item>
   </ion-list>
   <ion-list class="no-border">

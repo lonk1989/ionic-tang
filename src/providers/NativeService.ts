@@ -205,7 +205,7 @@ export class NativeService {
       this.toastCtrl.create({
         message: message,
         duration: duration,
-        position: 'middle',
+        position: 'bottom',
         showCloseButton: false
       }).present();
     }

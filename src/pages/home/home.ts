@@ -18,7 +18,6 @@ export class HomePage {
   private sicknessList: Array<any>
   private doctorList: Array<any>
   private sicknessFirstLine: Array<any>
-  private sicknessSecondLine: Array<any>
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public commonService: CommonService, private events: Events, public globalData: GlobalData, private sanitizer: DomSanitizer ) {
     this.events.subscribe('user:login', (userInfo) => {
       this.commonService.getSicknessList().subscribe(resp => {
