@@ -1,4 +1,27 @@
 page-home {
+  .doctor-list {
+    .label {
+      margin:0!important;
+    }
+  }
+  .pmain_text {
+    font-size: 11px;
+    span, font {
+      font-size: 11px!important;
+    }
+  }
+  .searchbar {
+    background: #bd0000!important;
+    min-height: 2.8rem!important;
+    .searchbar-input {
+      border-radius: 15px!important;
+      height: 2rem!important;
+    }
+    .searchbar-search-icon {
+      left: 12px!important;
+      top: 5px!important;
+    }
+  }
   .yzt-header {
     width: 100%;
     background: #fff;
@@ -19,6 +42,10 @@ page-home {
   .space {
     height: 12px;
     background: #eee;
+  }
+
+  .tang-line {
+    width: 100%;
   }
 
   .home-menu {

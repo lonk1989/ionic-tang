@@ -123,4 +123,12 @@ export class CommonService {
   patientReloadToken() {
     return this.httpService.post('patientReloadToken');
   }
+
+  getSicknessList() {
+    return this.httpService.post('listSickness');
+  }
+
+  getDoctorList() {
+    return this.httpService.post('listDoctor');
+  }
 }

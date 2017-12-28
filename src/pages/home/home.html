@@ -8,7 +8,7 @@
   <div class="yzt-header">
     <img src="assets/imgs/header.png" />
   </div>
-  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+  <ion-searchbar (ionInput)="search($event)" placeholder="输入症状、专家、经方"></ion-searchbar>
   <ion-slides pager loop autoplay="3000">
     <ion-slide>
       <img src="assets/imgs/slider-1.jpg" class="slide-image"/>
@@ -20,58 +20,46 @@
       <img src="assets/imgs/slider-3.jpg" class="slide-image"/>
     </ion-slide>
   </ion-slides>
-
+  <img class="tang-line" src="assets/imgs/tang-line.png"/>
+  <img src="assets/imgs/menu-mock.png" style="width:100%" />
+  <img class="tang-line" src="assets/imgs/tang-line.png"/>
   <ion-grid class="home-menu">
     <ion-row>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-1.png" />
-        <p>咳嗽感冒</p>
-      </ion-col>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-2.png" />
-        <p>失眠头疼</p>
-      </ion-col>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-3.png" />
-        <p>脱发白发</p>
-      </ion-col>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-4.png" />
-        <p>眼部不适</p>
+      <ion-col col-3 (click)="startPage()" *ngFor="let item of sicknessFirstLine">
+        <img [src]="item.icon" />
+        <p>{{item.name}}</p>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-5.png" />
-        <p>高血压</p>
+      <ion-col col-3 (click)="startPage()" *ngFor="let item of sicknessSecondLine">
+        <img [src]="item.icon" />
+        <p>{{item.name}}</p>
       </ion-col>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-6.png" />
-        <p>糖尿病</p>
-      </ion-col>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-7.png" />
-        <p>高血脂</p>
-      </ion-col>
-      <ion-col col-3 (click)="startPage()">
-        <img src="assets/imgs/icon-8.png" />
-        <p>痛风</p>
+      <ion-col col-3 (click)="startModalPage()">
+        <img src="assets/imgs/more.png" />
+        <p>更多</p>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div class="space"></div>
+  <img class="tang-line" src="assets/imgs/tang-line.png"/>
   <ion-list class="home-doctor">
-    <button ion-item>更多医生</button>
-    <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
-      <ion-thumbnail item-start>
-        <img src="assets/imgs/avatar-1.png">
-      </ion-thumbnail>
-      <h2>王医师 <small>主任医师</small></h2>
-      <p><small>仁济医院（三甲）</small></p>
-      <p><em>1800</em> 人付款，<em>190</em> 条评价</p>
-      <p text-wrap>脾胃不足，百病之始</p>
-    </button>
-    <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
+    <div ion-item text-center no-lines>
+      <img src="assets/imgs/recommend.png" style="width:120px;height:auto;"/>
+    </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 (click)="startDoctorPage()" *ngFor="let item of doctorList">
+        <div ion-item text-center no-lines no-padding class="doctor-list">
+          <img [src]="item.avatar" style="height:auto;">
+          <h2>{{item.name}} </h2>
+          <!-- <p><small>{{item.hospital}}{{item.rank}}</small></p> -->
+          <div text-wrap class="pmain_text" [innerHTML]="assembleHTML(item.intro)"></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    <button ion-item text-right (click)="startDoctorListPage()" no-lines>全部专家</button>
+    <!-- <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
       <ion-thumbnail item-start>
         <img src="assets/imgs/avatar-2.png">
       </ion-thumbnail>
@@ -106,6 +94,6 @@
       <p><small>仁济医院（三甲）</small></p>
       <p><em>1800</em> 人付款，<em>190</em> 条评价</p>
       <p text-wrap>脾胃不足，百病之始</p>
-    </button>
+    </button> -->
   </ion-list>
 </ion-content>

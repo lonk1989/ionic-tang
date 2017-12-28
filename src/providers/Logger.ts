@@ -23,7 +23,7 @@ export class Logger {
         metaData: {
           action: action,//操作名称
           other: other,//其他数据信息
-          user: {id: this.globalData.userId, name: this.globalData.username}
+          user: {id: this.globalData.userId, name: this.globalData.phone}
         }
       });
   }
@@ -35,7 +35,7 @@ export class Logger {
         metaData: {
           action: msg,//操作名称
           other: other,//其他数据信息
-          user: {id: this.globalData.userId, name: this.globalData.username}
+          user: {id: this.globalData.userId, name: this.globalData.phone}
         }
       });
   }

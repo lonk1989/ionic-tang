@@ -46,7 +46,7 @@ export class MyApp {
             this.storage.set('token', resp.token);
             this.helper.loginSuccessHandle(resp.userInfo);
           }, err => {
-            this.nativeService.alertObj.dismiss();
+            // this.nativeService.alertObj.dismiss();
             this.modalCtrl.create(LoginPage).present();
           });
         } else {
