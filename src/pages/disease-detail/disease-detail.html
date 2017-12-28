@@ -12,6 +12,16 @@
   </ion-list>
   <ion-list class="doctor-list">
     <ion-item text-center class="adept">以下医生擅长治疗「脾胃虚弱」</ion-item>
+        <button ion-item class="home-doctor-info" (click)="startDoctorPage(item.id)" *ngFor="let item of doctorList">
+      <ion-thumbnail item-start>
+        <img [src]="item.avatar">
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+      <p><small>{{item.hospital}} {{item.rank}}</small></p>
+      <p><span *ngFor="let child of adeptArr">{{child}}</span></p>
+      <p><em>￥{{item.price}}元/次</em> <!-- 1441人付款，190条评价 --></p>
+    </button>
+    <!-- 
     <button ion-item class="home-doctor-info" (click)="startDoctorPage()">
       <ion-thumbnail item-start>
         <img src="assets/imgs/avatar-1.png">
@@ -56,6 +66,6 @@
       <p><small>仁济医院（三甲） 主任医师</small></p>
       <p><span>五官科</span><span>咽喉炎</span><span>耳部疾病</span></p>
       <p><em>￥120元/次</em> 1441人付款，190条评价</p>
-    </button>
+    </button> -->
   </ion-list>
 </ion-content>

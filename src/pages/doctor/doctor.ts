@@ -1,16 +1,42 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { BuyPage } from '../buy/buy';
+import { CommonService } from "../../service/CommonService";
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'page-doctor',
   templateUrl: 'doctor.html'
 })
 export class DoctorPage {
+  id: Number
+  doctor: Object
+  constructor(public navCtrl: NavController, public params: NavParams, public toastCtrl: ToastController, public commonService: CommonService, private sanitizer: DomSanitizer) {
+    this.doctor = {
+      name: '',
+      rank: '',
+      hospital: '',
+      price: '--',
+      about: '',
+      intro: '',
+      adeptArr: []
+    }
+    this.id = this.params.get('id') || 0;
+  }
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+  ionViewDidEnter () {
+    this.commonService.getDoctorById(this.id).subscribe(resp => {
+      resp.rank = resp.rank.toString().replace('0', '').replace('1', '主任医师').replace('2', '副主任医师').replace('3', '主治医师').replace('4', '住院医师').replace('5', '医师')
+      resp.adeptArr = resp.adept.split(',')
+      resp.price = parseFloat(resp.price)
+      resp.consult_price = parseFloat(resp.consult_price)
+      this.doctor = resp
+    });
+  }
 
+  assembleHTML(strHTML:any) {
+    return this.sanitizer.bypassSecurityTrustHtml(strHTML);
   }
 
   startBuyPage () {

@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { ChatPage } from '../pages/chat/chat';
 import { MePage } from '../pages/me/me';
 import { HomePage } from '../pages/home/home';
+import { MoreModal } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DoctorPage } from '../pages/doctor/doctor';
 import { BuyPage } from '../pages/buy/buy';
@@ -21,6 +22,7 @@ import { MeSettingsPage } from '../pages/me-settings/me-settings';
 import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage } from '../pages/login/login';
 import { RegPage } from '../pages/reg/reg';
+import { DepartmentPage } from '../pages/department/department';
 
 import {AppVersion} from "@ionic-native/app-version";
 import {Camera} from "@ionic-native/camera";
@@ -72,6 +74,7 @@ export class FunDebugErrorHandler implements ErrorHandler {
     MePage,
     ChatPage,
     HomePage,
+    MoreModal,
     TabsPage,
     DoctorPage,
     BuyPage,
@@ -84,7 +87,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     MeSettingsPage,
     SettingsPage,
     LoginPage,
-    RegPage
+    RegPage,
+    DepartmentPage
   ],
   imports: [
     BrowserModule,
@@ -106,6 +110,7 @@ export class FunDebugErrorHandler implements ErrorHandler {
     MePage,
     ChatPage,
     HomePage,
+    MoreModal,
     TabsPage,
     DoctorPage,
     BuyPage,
@@ -118,7 +123,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     MeSettingsPage,
     SettingsPage,
     LoginPage,
-    RegPage
+    RegPage,
+    DepartmentPage
   ],
   providers: [
     {provide: LOCALE_ID, useValue: "zh-CN"},

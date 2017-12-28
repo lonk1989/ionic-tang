@@ -21,21 +21,52 @@
     </ion-slide>
   </ion-slides>
   <img class="tang-line" src="assets/imgs/tang-line.png"/>
-  <img src="assets/imgs/menu-mock.png" style="width:100%" />
-  <img class="tang-line" src="assets/imgs/tang-line.png"/>
-  <ion-grid class="home-menu">
+  <ion-grid class="home-menu-top">
     <ion-row>
-      <ion-col col-3 (click)="startPage()" *ngFor="let item of sicknessFirstLine">
-        <img [src]="item.icon" />
-        <p>{{item.name}}</p>
+      <ion-col col-3 (click)="startSicknessPage()" text-center>
+        <img src="assets/imgs/menu-1.png" />
+        <p>症状</p>
+      </ion-col>
+      <ion-col col-3 (click)="startDepartmentPage()" text-center>
+        <img src="assets/imgs/menu-2.png" />
+        <p>科室</p>
+      </ion-col>
+      <ion-col col-3 (click)="startDoctorListPage()" text-center>
+        <img src="assets/imgs/menu-3.png" />
+        <p>专家</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()" text-center>
+        <img src="assets/imgs/menu-4.png" />
+        <p>经方</p>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-3 (click)="startPage()" *ngFor="let item of sicknessSecondLine">
+      <ion-col col-3 (click)="startPage()" text-center>
+        <img src="assets/imgs/menu-5.png" />
+        <p>健康</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()" text-center>
+        <img src="assets/imgs/menu-6.png" />
+        <p>养生</p>
+      </ion-col>
+      <ion-col col-3 (click)="startPage()" text-center>
+        <img src="assets/imgs/menu-7.png" />
+        <p>客服</p>
+      </ion-col>
+      <ion-col col-3 (click)="startMoreModal()" text-center>
+        <img src="assets/imgs/menu-8.png" />
+        <p>更多</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <img class="tang-line" src="assets/imgs/tang-line.png"/>
+  <ion-grid class="home-menu">
+    <ion-row>
+      <ion-col col-3 (click)="startPage(item.name)" *ngFor="let item of sicknessFirstLine">
         <img [src]="item.icon" />
         <p>{{item.name}}</p>
       </ion-col>
-      <ion-col col-3 (click)="startModalPage()">
+      <ion-col col-3 (click)="startMoreModal()">
         <img src="assets/imgs/more.png" />
         <p>更多</p>
       </ion-col>
@@ -48,7 +79,7 @@
     </div>
   <ion-grid>
     <ion-row>
-      <ion-col col-6 (click)="startDoctorPage()" *ngFor="let item of doctorList">
+      <ion-col col-6 (click)="startDoctorPage(item.id)" *ngFor="let item of doctorList">
         <div ion-item text-center no-lines no-padding class="doctor-list">
           <img [src]="item.avatar" style="height:auto;">
           <h2>{{item.name}} </h2>

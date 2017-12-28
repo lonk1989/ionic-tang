@@ -26559,6 +26559,15 @@ page-collect .no-border .item-inner {
   border-bottom: none !important;
 }
 
+page-department .list {
+  margin-bottom: 12px;
+}
+
+page-department .list .item {
+  min-height: 34px;
+  font-size: 14px;
+}
+
 page-disease-detail .list {
   margin-bottom: 12px;
 }
@@ -26734,6 +26743,14 @@ page-doctor-list .doctor-list .home-doctor-info .item-inner {
   background-image: none !important;
 }
 
+page-home img {
+  display: block;
+}
+
+page-home .menu-pic {
+  width: 46px;
+}
+
 page-home .doctor-list .label {
   margin: 0 !important;
 }
@@ -26769,6 +26786,7 @@ page-home .yzt-header {
 }
 
 page-home .yzt-header img {
+  display: inline-block;
   height: 44px;
 }
 
@@ -26789,6 +26807,24 @@ page-home .tang-line {
   width: 100%;
 }
 
+page-home .home-menu-top {
+  background: url(../assets/imgs/menu-bg.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+page-home .home-menu-top .col img {
+  width: 46px;
+  height: 46px;
+  display: inline-block;
+}
+
+page-home .home-menu-top .col p {
+  font-size: 12px;
+  margin: 0;
+  color: #999;
+}
+
 page-home .home-menu {
   text-align: center;
 }
@@ -26797,6 +26833,7 @@ page-home .home-menu .col img {
   border-radius: 50%;
   width: 46px;
   height: 46px;
+  display: inline-block;
 }
 
 page-home .home-menu .col p {
@@ -26813,6 +26850,7 @@ page-home .home-doctor .item img {
   border-radius: 50%;
   width: 60px;
   height: 60px;
+  display: inline-block;
 }
 
 page-home .home-doctor .item p em {

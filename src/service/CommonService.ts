@@ -131,4 +131,12 @@ export class CommonService {
   getDoctorList() {
     return this.httpService.post('listDoctor');
   }
+
+  getDepartmentList() {
+    return this.httpService.post('listDepartment');
+  }
+
+  getDoctorById(id) {
+    return this.httpService.post('getDoctorById', {id: id});
+  }
 }

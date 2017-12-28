@@ -5,20 +5,21 @@
 </ion-header>
 <ion-content style="background: #eee;">
   <ion-list class="no-border">
-    <ion-item class="doctor-avatar-bg" style="background:url(../assets/imgs/avatar-1.png) no-repeat;background-size: 100% auto">
-      <h2>王医师 · <small>主任医师</small></h2>
-      <p>东直门医院（三甲）<span>三甲医院</span></p>
+    <!-- <ion-item class="doctor-avatar-bg" style="background:url(../assets/imgs/avatar-1.png) no-repeat;background-size: 100% auto"> -->
+    <ion-item class="doctor-avatar-bg">
+      <h2>{{doctor.name}} · <small>{{doctor.rank}}</small></h2>
+      <p>{{doctor.hospital}}</p>
       <p><small>服务1832人 · 84%复诊率 · 190条评价</small></p>
     </ion-item>
     <ion-item class="chat">
-      <h2>300元/次 <span>图文 · 语音</span></h2>
+      <h2>{{doctor.price}}元/次 <span>图文 · 语音</span></h2>
       <p>医生将在24小时内与您图文交流、辩证开方</p>
       <button ion-button item-end (click)="startBuyPage()">图文问诊</button>
     </ion-item>
   </ion-list>
   <ion-list class="no-border">
     <ion-item class="chat">
-      <h2>100元/5次 <span>图文 · 语音</span></h2>
+      <h2>{{doctor.consult_price}}元/5次 <span>图文 · 语音</span></h2>
       <p>医生将在24小时内回答您的诊后问题</p>
       <button ion-button item-end (click)="startVisitPage()">诊后咨询</button>
     </ion-item>
@@ -38,22 +39,24 @@
       <br />
       <h2 text-center>· 擅长调理 ·</h2>
       <br />
-      <p text-wrap><span>皮肤科</span><span>痘痘痤疮</span><span>脱发</span><span>湿疹</span><span>面部色斑</span></p>
+      <!-- <p text-wrap><span>皮肤科</span><span>痘痘痤疮</span><span>脱发</span><span>湿疹</span><span>面部色斑</span></p> -->
+      <p text-wrap><span *ngFor="let child of doctor.adeptArr">{{child}}</span></p>
       <br />
     </ion-item>
   </ion-list>
-  <ion-list class="no-border">
+<!--   <ion-list class="no-border">
     <ion-item>
       <p>战“痘”专家——皮肤健康才会颜值爆表！</p>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
   <ion-list class="no-border">
     <ion-item>
       <br />
       <h2 text-center> · 关于我 · </h2>
       <br />
-      <img src="../assets/imgs/icon-14.png" />
-      <p text-wrap>有人说最可悲的是“青春不在青春痘还在”，岁月悠悠，长在你脸上的已经不是青春的“痘”，而是成人痤疮。痘痘是穿越青春的痛</p>
+      <!-- <img src="../assets/imgs/icon-14.png" /> -->
+      <div text-wrap class="pmain_text" [innerHTML]="assembleHTML(doctor.about)"></div>
+      <!-- <p text-wrap>有人说最可悲的是“青春不在青春痘还在”，岁月悠悠，长在你脸上的已经不是青春的“痘”，而是成人痤疮。痘痘是穿越青春的痛</p> -->
       <br />
     </ion-item>
   </ion-list>
@@ -62,7 +65,7 @@
       <br />
       <h2 text-center> · 我的简介 · </h2>
       <br />
-      <p text-wrap>李医师 医学博士，主任医师，从事中医皮肤科临床、教学、科研工作二十余年。</p>
+      <div text-wrap class="pmain_text" [innerHTML]="assembleHTML(doctor.intro)"></div>
       <br />
     </ion-item>
   </ion-list>

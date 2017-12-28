@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      科室列表
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="startDoctorPage(item.name)" *ngFor="let item of departmentList">{{item.name}}</button>
+  </ion-list>
+</ion-content>

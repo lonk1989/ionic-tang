@@ -1,4 +1,10 @@
 page-home {
+  img {
+    display: block;
+  }
+  .menu-pic {
+    width: 46px;
+  }
   .doctor-list {
     .label {
       margin:0!important;
@@ -28,10 +34,10 @@ page-home {
     height: 44px;
     text-align: center;
     img {
+      display: inline-block;
       height: 44px;
     }
   }
-
   .slides {
     height: auto;
   }
@@ -48,12 +54,30 @@ page-home {
     width: 100%;
   }
 
+  .home-menu-top {
+    background: url(../assets/imgs/menu-bg.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    .col img {
+      width: 46px;
+      height: 46px;
+      display: inline-block;
+    }
+    .col p {
+      font-size: 12px;
+      margin: 0;
+      color: #999;
+    }
+  }
+
+
   .home-menu {
     text-align: center;
     .col img {
       border-radius: 50%;
       width: 46px;
       height: 46px;
+      display: inline-block;
     }
     .col p {
       font-size: 12px;
@@ -71,6 +95,7 @@ page-home {
       border-radius: 50%;
       width: 60px;
       height: 60px;
+      display: inline-block;
     }
 
     .item p em {
