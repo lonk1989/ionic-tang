@@ -35,7 +35,6 @@ export class HomePage {
   }
 
   assembleHTML(strHTML:any) {
-    console.log(strHTML)
     return this.sanitizer.bypassSecurityTrustHtml(strHTML);
   }
 
