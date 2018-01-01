@@ -1,6 +1,6 @@
 /*----------------------------------------后台Api地址----------------------------------------*/
-export const APP_SERVE_URL = 'http://118.31.12.161:3001/api/';
-// export const APP_SERVE_URL = 'http://localhost:3001/api/';
+// export const APP_SERVE_URL = 'http://118.31.12.161:3001/api/';
+export const APP_SERVE_URL = 'http://localhost:3001/api/';
 /*----------------------------------------文件服务器地址----------------------------------------*/
 export const FILE_SERVE_URL = 'http://172.16.19.86/kit_file_server/';//文件服务:测试环境
 

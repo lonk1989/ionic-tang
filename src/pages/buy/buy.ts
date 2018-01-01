@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
+import {CallNumber} from "@ionic-native/call-number";
+import {NativeService} from "../../providers/NativeService";
+import {Utils} from "../../providers/Utils";
 
 @Component({
   selector: 'page-buy',
@@ -11,7 +14,10 @@ export class BuyPage {
   price: String
   avatar: String
 
-  constructor(public navCtrl: NavController, public params: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,
+              public nativeService: NativeService,
+              public params: NavParams, 
+              public toastCtrl: ToastController) {
     this.name = this.params.get('name');
     this.price = this.params.get('price');
     this.avatar = this.params.get('avatar');
@@ -19,17 +25,8 @@ export class BuyPage {
   }
 
   tel () {
-    const toast = this.toastCtrl.create({
-      message: '拨打客服电话',
-      duration: 3000,
-      position: 'middle'
-    });
-
-    toast.onDidDismiss( () => {
-      // console.log('Dismissed toast');
-    });
-
-    toast.present();
+    const settings = Utils.sessionStorageGetItem('settings')
+    this.nativeService.isMobile() && this.nativeService.callNumber(settings.tel);
   }
 
   startPayPage () {

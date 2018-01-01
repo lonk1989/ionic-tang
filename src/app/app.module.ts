@@ -23,6 +23,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage } from '../pages/login/login';
 import { RegPage } from '../pages/reg/reg';
 import { DepartmentPage } from '../pages/department/department';
+import { DiagnosisPage } from '../pages/diagnosis/diagnosis';
 
 import {AppVersion} from "@ionic-native/app-version";
 import {Camera} from "@ionic-native/camera";
@@ -88,7 +89,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     SettingsPage,
     LoginPage,
     RegPage,
-    DepartmentPage
+    DepartmentPage,
+    DiagnosisPage
   ],
   imports: [
     BrowserModule,
@@ -124,7 +126,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     SettingsPage,
     LoginPage,
     RegPage,
-    DepartmentPage
+    DepartmentPage,
+    DiagnosisPage
   ],
   providers: [
     {provide: LOCALE_ID, useValue: "zh-CN"},

@@ -5,10 +5,10 @@ import {CommonService} from "../../service/CommonService";
 import { DoctorPage } from '../doctor/doctor';
 import {GlobalData} from "../../providers/GlobalData";
 import { Events } from 'ionic-angular';
-// import { DomSanitizer } from '@angular/platform-browser/src/security/dom_sanitization_service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DoctorListPage } from '../doctor-list/doctor-list';
 import { DepartmentPage } from '../department/department';
+import {Utils} from "../../providers/Utils";
 
 @Component({
   selector: 'page-home',
@@ -16,10 +16,14 @@ import { DepartmentPage } from '../department/department';
 })
 export class HomePage {
   private sicknessList: Array<any>
+  private settings: Object
   private doctorList: Array<any>
   private sicknessFirstLine: Array<any>
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public commonService: CommonService, private events: Events, public globalData: GlobalData, private sanitizer: DomSanitizer ) {
     this.events.subscribe('user:login', (userInfo) => {
+      this.commonService.getSettings().subscribe(resp => {
+        Utils.sessionStorageSetItem('settings', resp);
+      });
       this.commonService.getSicknessList().subscribe(resp => {
         this.sicknessList = resp.data
         this.sicknessFirstLine = resp.data.slice(0,7)

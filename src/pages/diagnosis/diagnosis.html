@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      症状描述
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="save(form.value)">
+    <div *ngIf="state===1">
+      <div ion-item text-center style="background: #eee;" no-lines>· 主要症状 ·</div>
+      <div ion-item>
+        <p>请描述您最主要的症状，诱因及持续时间</p>
+      </div>
+      <div ion-item padding>
+        <ion-textarea style="background: #eee;" rows="6" autosize formControlName="symptom" placeholder="例：初诊-三天前吃冷饮后开始腹泻，胃痛间断性发作。复诊-手背湿疹，湿疹相比之前消退了，还剩几个，没有新发的湿疹。"></ion-textarea>
+      </div>
+    </div>
+    <div *ngIf="state===2">
+      <div ion-item text-center style="background: #eee;" no-lines>· 脉搏数 ·</div>
+      <div ion-item>
+        <p>请测量您一分钟的脉搏次数 <ion-input type="number" formControlName="pulse"></ion-input>次/分</p>
+      </div>
+      <div ion-item padding text-center>
+        <span class="count-txt">{{countDown}}</span>
+        <br />
+        <a ion-button color="primary" *ngIf="!restartBtnShow" class="count-btn" (click)="startCountDown()">开始计时</a>
+        <a ion-button color="primary" *ngIf="restartBtnShow" class="count-btn" (click)="restartCountDown()">{{countDownTxt}}</a>
+      </div>
+    </div>
+    <div padding text-center>
+      <a ion-button color="light" style="width:140px;" *ngIf="state!==1" small (click)="stateMinus()">上一步</a>
+      <a ion-button color="primary" style="width:140px;" small (click)="statePlus()">下一步</a>
+    </div>
+  </form>
+</ion-content>

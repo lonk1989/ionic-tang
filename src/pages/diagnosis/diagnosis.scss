@@ -1,0 +1,23 @@
+@import "../../theme/variables.scss";
+
+page-diagnosis {
+  form {
+    margin-bottom: 12px;
+    .item {
+      min-height: 34px;
+      font-size: 14px;
+    }
+  }
+
+  .count-txt {
+    color: #f53d3d;
+    font-size: 28px;
+  }
+
+  .count-btn {
+    height: 72px!important;
+    width: 72px;
+    border-radius: 50%;
+    margin:24px 0;
+  }
+}
